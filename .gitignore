@@ -2,7 +2,7 @@
 node_modules/
 
 # Build artifacts
-dist/
+# dist/ - included for npx support
 public/dist/
 
 # Environment files

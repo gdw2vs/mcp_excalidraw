@@ -2269,12 +2269,10 @@ if (process.env.DEBUG === 'true') {
   logger.debug('Debug mode enabled');
 }
 
-// Start the server if this file is run directly
-if (fileURLToPath(import.meta.url) === process.argv[1]) {
-  runServer().catch(error => {
-    logger.error('Failed to start server:', error);
-    process.exit(1);
-  });
-}
+// Start the server (always run when executed as binary)
+runServer().catch(error => {
+  logger.error('Failed to start server:', error);
+  process.exit(1);
+});
 
 export default runServer;
